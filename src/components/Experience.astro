@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Full Stack Developer - Helpi App",
+    description:
+      "Responsable principal del desarrollo UI/UX, frontend y backend. Toma de decisiones a la hora de implementar nuevas features. Inversionista de la app.",
+    link: "https://helpi.ar/",
+  },
+  {
+    date: "Abril 2023",
+    title: "Principal Frontend Engineer − Coledu  - Tresmas SRL",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y el desarrollo de la aplicación web. Mejoras notables en tiempos de entrega. Implantación de medidas de integración continua y despliegue.",
+  },
+  {
+    date: "Diciembre 2021",
+    title: "Principal Frontend Engineer − Coleshopp - Tresmas SRL",
+    description:
+      "Responsable de la implementación de un nuevo diseño global, así también como nuevas features y optimización de código ya existente.",
+  },
+  {
+    date: "Enero 2021",
+    title: "Estudios - Henry Bootcamp",
+    description:
+      "Bootcamp de seis meses donde aprendí el uso e implementación de tecnologías tales como JavaScript, NodeJs y ReactJs. En ese periodo trabajé en el desarrollo de un e-commerce y una app hecha en React Native para llevar métricas de los alumnos de Henry.",
+    titleLink: "Certificado de graduación",
+    link: "https://drive.google.com/file/d/1eaBk_P8c1csuyxE3Lc-Y3CXw9YCGNH6L/view?usp=sharing",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
