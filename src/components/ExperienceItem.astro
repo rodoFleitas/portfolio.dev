@@ -1,4 +1,6 @@
 ---
+import ArrowIcon from "../icons/Arrow.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -14,10 +16,7 @@ const { title, description, link, titleLink, date } = Astro.props;
   class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"
 >
 </div>
-<time
-  class="mb-1 text-sm font-semibold leading-none "
-  >{date}</time
->
+<time class="mb-1 text-sm font-semibold leading-none">{date}</time>
 <h3 class="text-lg font-semibold text-[#711DB0] dark:text-[#5D3587] mt-2">
   {title}
 </h3>
@@ -32,22 +31,7 @@ const { title, description, link, titleLink, date } = Astro.props;
       rel="noopener noreferrer"
       class="bg-white/5 border dark:border-white/10 border-gray-300 rounded-full inline-flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base transition hover:scale-105 hover:bg-white/10"
     >
-      {titleLink || "Saber más..."}{" "}
-      <svg
-        class="w-3 h-3 ms-2 rtl:rotate-180"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 14 10"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 5h12m0 0L9 1m4 4L9 9"
-        />
-      </svg>
+      {titleLink || "Saber más"} <ArrowIcon />
     </a>
   )
 }

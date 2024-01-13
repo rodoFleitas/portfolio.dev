@@ -1,0 +1,49 @@
+---
+import ArrowIcon from "../icons/Arrow.astro";
+
+const { title, description, image, tags, titleLink, link } = Astro.props;
+---
+
+<div class="flex items-center justify-between mb-3">
+  <h3 class="text-2xl font-semibold text-[#711DB0] dark:text-[#5D3587]">
+    {title}
+  </h3>
+  {
+    link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-white/5 border dark:border-white/10 border-gray-300 rounded-full inline-flex justify-center items-center gap-x-2 py-1 px-2 text-sm text-pretty  transition hover:scale-105 hover:bg-white/10"
+      >
+        {titleLink || "Visitar"}
+        <ArrowIcon />
+      </a>
+    )
+  }
+</div>
+<p class="text-lg mb-6 text-pretty">{description}</p>
+
+<ul class="flex gap-x-3 gap-y-3 flex-row mb-6 flex-wrap">
+  {
+    tags.map((tag) => (
+      <li
+        class={`flex items-center gap-x-2 rounded-full text-sm ${tag.class} py-1 px-4 `}
+      >
+        <tag.icon class="size-4" />
+        {tag.name}
+      </li>
+    ))
+  }
+</ul>
+
+{
+  image && (
+    <img
+      loading="lazy"
+      class="rounded-xl shadow-2xl aspect-video"
+      src={image}
+      alt={`Captura de pantalla del proyecto ${image}`}
+    />
+  )
+}

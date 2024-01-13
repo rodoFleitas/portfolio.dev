@@ -1,0 +1,130 @@
+---
+import AstroIcon from "../icons/ProjectsIcons/AstroIcon.astro";
+import CSSIcon from "../icons/ProjectsIcons/CSSIcon.astro";
+import ExpressIcon from "../icons/ProjectsIcons/ExpressIcon.astro";
+import JWTIcon from "../icons/ProjectsIcons/JWTIcon.astro";
+import JavaScriptIcon from "../icons/ProjectsIcons/JavaScriptIcon.astro";
+import MUIIcon from "../icons/ProjectsIcons/MUIIcon.astro";
+import MongoDBIcon from "../icons/ProjectsIcons/MongoDBIcon.astro";
+import NodeIcon from "../icons/ProjectsIcons/NodeIcon.astro";
+import ReactIcon from "../icons/ProjectsIcons/ReactIcon.astro";
+import ReduxIcon from "../icons/ProjectsIcons/ReduxIcon.astro";
+import TailwindIcon from "../icons/ProjectsIcons/TailwindIcon.astro";
+import ProjectItem from "./ProjectItem.astro";
+
+const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    class: "bg-gray-800 text-white",
+    icon: AstroIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-gray-800 text-white",
+    icon: CSSIcon,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-gray-800 text-white",
+    icon: ExpressIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-gray-800 text-white",
+    icon: JavaScriptIcon,
+  },
+  JWT: {
+    name: "Jason Web Token",
+    class: "bg-gray-800 text-white",
+    icon: JWTIcon,
+  },
+  MONGO: {
+    name: "Mongo DB - Mongoose",
+    class: "bg-gray-800 text-white",
+    icon: MongoDBIcon,
+  },
+  MUI: {
+    name: "Material UI",
+    class: "bg-gray-800 text-white",
+    icon: MUIIcon,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-gray-800 text-white",
+    icon: NodeIcon,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-gray-800 text-white",
+    icon: ReactIcon,
+  },
+  REDUX: {
+    name: "Redux",
+    class: "bg-gray-800 text-white",
+    icon: ReduxIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-gray-800 text-white",
+    icon: TailwindIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Tesla Clone Page",
+    description:
+      "Clone del sitio web de automóviles Tesla en España. Se puso en práctica nuevos conocimientos.",
+    titleLink: "Visitar",
+    link: "https://tesla-clonepage-rodof.netlify.app/",
+    image: "/projects/tesla.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+
+  {
+    title: "Helpi",
+    description:
+      "Plataforma que conecta a personas, negocios y comunidades con el fin común de resolver problemas del día a día, ofrecer servicios y contribuir con el desarrollo de la comunidad. ",
+    titleLink: "Saber más",
+    link: "https://helpi.ar/",
+
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.REACT,
+      TAGS.REDUX,
+      TAGS.CSS,
+      TAGS.MUI,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.MONGO,
+      TAGS.JWT,
+    ],
+  },
+
+  {
+    title: "Coledu - Frontend",
+    description:
+      "Plataforma creada para mejorar la comunicación, organización y administración. Coledu es una solución integral para optimizar los procesos de las instituciones educativas. [Imagen de la página de información, la app es de dominio privado y con licencia paga]",
+    link: "https://coledu.ar/",
+    image: "/projects/coledu.webp",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.REDUX, TAGS.CSS, TAGS.MUI],
+  },
+
+  {
+    title: "Coleshop - Frontend",
+    description:
+      "Plataforma creada para conectar padres y docentes a través de un e-commerce que reúne artículos de los colegios pertenecientes a la República Argentina.",
+    link: "https://coleshop.ar/",
+    image: "/projects/coleshop.webp",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.REDUX, TAGS.CSS, TAGS.MUI],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="mb-12 rounded-xl p-4 border border-gray-200  dark:border-gray-900">
+      <ProjectItem {...project} />
+    </article>
+  ))
+}
